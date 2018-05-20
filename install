@@ -544,9 +544,9 @@ loud "\n-----------------------------------------------------"
 loud "               * Configuring RabbitMQ *               "
 loud "-----------------------------------------------------"
 verbose "\n * Setting RabbitMQ for listening on ipv4 address..."
-loudCmd "service rabbitmqctl stop"
+loudCmd "service rabbitmq-server stop"
 loudCmd "cp files/rabbitmq.config /etc/rabbitmq"
-loudCmd "service rabbitmqctl start"
+loudCmd "service rabbitmq-server start"
 
 
 RABBITMQ_VHOST=/airtime
