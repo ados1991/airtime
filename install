@@ -543,6 +543,11 @@ fi
 loud "\n-----------------------------------------------------"
 loud "               * Configuring RabbitMQ *               "
 loud "-----------------------------------------------------"
+verbose "\n * Setting RabbitMQ for listening on ipv4 address..."
+loudCmd "service rabbitmqctl stop"
+loudCmd "cp files/rabbitmq.config /etc/rabbitmq"
+loudCmd "service rabbitmqctl start"
+
 
 RABBITMQ_VHOST=/airtime
 RABBITMQ_USER=airtime
