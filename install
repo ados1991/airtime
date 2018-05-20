@@ -619,8 +619,11 @@ fi
 verbose "\n * Reloading apache..."
 loudCmd "service apache2 reload 2>/dev/null"
 
-verbose "\n * Restarting apache..."
-loudCmd "service apache2 restart"
+verbose "\n * Stopping apache..."
+loudCmd "service apache2 stop"
+
+verbose "\n * Starting apache..."
+loudCmd "service apache2 start"
 
 IP=$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')
 
